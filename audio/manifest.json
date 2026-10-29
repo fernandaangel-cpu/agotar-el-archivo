@@ -1,0 +1,102 @@
+[
+  {
+    "id": "a",
+    "name": "Apertura",
+    "duration": 2.2,
+    "baseHz": 130.8128,
+    "file": "audio/a.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "e",
+    "name": "Claridad",
+    "duration": 2.1,
+    "baseHz": 130.8128,
+    "file": "audio/e.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "i",
+    "name": "Hilo",
+    "duration": 2.0,
+    "baseHz": 130.8128,
+    "file": "audio/i.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "o",
+    "name": "Cavidad",
+    "duration": 2.4,
+    "baseHz": 130.8128,
+    "file": "audio/o.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "u",
+    "name": "Profundidad",
+    "duration": 2.6,
+    "baseHz": 130.8128,
+    "file": "audio/u.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "m",
+    "name": "Murmullo",
+    "duration": 2.5,
+    "baseHz": 130.8128,
+    "file": "audio/m.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "s",
+    "name": "Fricción",
+    "duration": 0.65,
+    "baseHz": null,
+    "file": "audio/s.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "f",
+    "name": "Aire",
+    "duration": 1.2,
+    "baseHz": null,
+    "file": "audio/f.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "ta",
+    "name": "Contacto",
+    "duration": 0.32,
+    "baseHz": 130.8128,
+    "file": "audio/ta.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  },
+  {
+    "id": "ka",
+    "name": "Quiebre",
+    "duration": 0.4,
+    "baseHz": 130.8128,
+    "file": "audio/ka.wav",
+    "origin": "Síntesis original por código para Agotar el archivo; realizada con asistencia de IA.",
+    "license": "CC0-1.0",
+    "humanVoice": false
+  }
+]

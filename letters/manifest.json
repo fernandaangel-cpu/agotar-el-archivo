@@ -1,0 +1,115 @@
+[
+  {
+    "id": "1985",
+    "title": "Carta de 1985",
+    "year": "1985",
+    "date": "19 de agosto de 1985",
+    "dateNote": "Fecha manuscrita: 8-19-85. Matasellos: 20 de agosto de 1985.",
+    "origin": "Wilmington, California, Estados Unidos",
+    "destination": "Santiago, Chile",
+    "sender": "María Elena; incluye un mensaje de Carolina",
+    "recipient": "Galvarino Henríquez S.",
+    "address": "Nataniel Cox 986, Santiago 3, Chile",
+    "found": "Recuperada del persa en Chile. Lugar y fecha del hallazgo por precisar.",
+    "description": "Papel pautado con ilustraciones infantiles y flores, escritura en español e inglés, un dibujo y pliegues visibles.",
+    "note": "Dos escrituras comparten el envío. Una parte está en inglés y otra en español.",
+    "initial": 3,
+    "pages": [
+      {
+        "file": "letters/1985-1.jpg",
+        "label": "Sobre · anverso"
+      },
+      {
+        "file": "letters/1985-2.jpg",
+        "label": "Sobre · reverso"
+      },
+      {
+        "file": "letters/1985-3.jpg",
+        "label": "Carta · página 1 · inglés"
+      },
+      {
+        "file": "letters/1985-4.jpg",
+        "label": "Carta · página 2"
+      },
+      {
+        "file": "letters/1985-5.jpg",
+        "label": "Carta · página 3"
+      }
+    ],
+    "cover": "letters/1985-4.jpg"
+  },
+  {
+    "id": "1986",
+    "title": "Carta de 1986",
+    "year": "1986",
+    "date": "2 de diciembre de 1986",
+    "dateNote": "Fecha manuscrita: Dec-2-86. Matasellos: 4 de diciembre de 1986.",
+    "origin": "Wilmington, California, Estados Unidos",
+    "destination": "Santiago, Chile",
+    "sender": "María Elena",
+    "recipient": "Galvarino Henríquez S.",
+    "address": "Nataniel Cox 986, Santiago 3, Chile",
+    "found": "Recuperada del persa en Chile. Lugar y fecha del hallazgo por precisar.",
+    "description": "Dos páginas manuscritas en papel claro, con pliegues horizontales, correcciones y tinta azul; sobre con sello aéreo.",
+    "note": "La correspondencia continúa entre noticias familiares y el deseo de reencontrarse.",
+    "initial": 2,
+    "pages": [
+      {
+        "file": "letters/1986-1.jpg",
+        "label": "Sobre · anverso"
+      },
+      {
+        "file": "letters/1986-2.jpg",
+        "label": "Sobre · reverso"
+      },
+      {
+        "file": "letters/1986-3.jpg",
+        "label": "Carta · página 1"
+      },
+      {
+        "file": "letters/1986-4.jpg",
+        "label": "Carta · página 2"
+      }
+    ],
+    "cover": "letters/1986-3.jpg"
+  },
+  {
+    "id": "1987",
+    "title": "Carta de 1987",
+    "year": "1987",
+    "date": "17 de febrero de 1987",
+    "dateNote": "Fecha manuscrita: Febrero-17-87. El matasellos muestra febrero de 1987; no se fija un día de despacho.",
+    "origin": "Wilmington, California, Estados Unidos",
+    "destination": "Santiago, Chile",
+    "sender": "María Elena",
+    "recipient": "Galvarino Henríquez S.",
+    "address": "Nataniel Cox 986, Santiago 3, Chile",
+    "found": "Recuperada del persa en Chile. Lugar y fecha del hallazgo por precisar.",
+    "description": "Tres páginas en papel pautado, tinta oscura, pliegues y escritura del reverso visible; sobre con marca AIR MAIL.",
+    "note": "Menciona un cassette para escuchar sus voces. La búsqueda de una presencia sonora ya forma parte del documento.",
+    "initial": 2,
+    "pages": [
+      {
+        "file": "letters/1987-1.jpg",
+        "label": "Sobre · anverso"
+      },
+      {
+        "file": "letters/1987-2.jpg",
+        "label": "Sobre · reverso"
+      },
+      {
+        "file": "letters/1987-3.jpg",
+        "label": "Carta · página 1"
+      },
+      {
+        "file": "letters/1987-4.jpg",
+        "label": "Carta · página 2"
+      },
+      {
+        "file": "letters/1987-5.jpg",
+        "label": "Carta · página 3"
+      }
+    ],
+    "cover": "letters/1987-3.jpg"
+  }
+]
