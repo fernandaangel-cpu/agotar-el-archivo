@@ -1,142 +1,163 @@
 # Agotar el archivo
 
-**Fernanda Angel · DPPI 2026 · T06 Sonidos**
+**Fernanda Angel · Universidad Diego Portales · DPPI 2026 · T06 Sonidos**  
+Proyecto individual de exploración de la relación entre sonido e imagen.
 
-> Todavía queda algo por escuchar.
+> Una carta sobrevive a su significado.
 
-Versión de estudio 02. Interfaz y motor de sonificación operativos con tres cartas digitalizadas, un estudio de trazos y archivos propios. **Colección de 1985, 1986 y 1987 incorporada. Faltan las capturas finales, pruebas con dispositivos reales y el video de entrega.** Este README documenta lo construido; la reflexión debe completarse después de probar las cartas reales.
+**[Entrar a la plataforma](https://fernandaangel-cpu.github.io/agotar-el-archivo/)** · **[Repositorio](https://github.com/fernandaangel-cpu/agotar-el-archivo)**
 
 ## 1. Concepto y relación imagen–sonido
 
-Tres cartas de los años ochenta recuperadas del persa en Chile son el punto de partida. El proyecto propone visitar el archivo, detenerse ante su materialidad y producir otras lecturas de lo que conserva. Los tres envíos se ordenan por sus fechas manuscritas: 19 de agosto de 1985, 2 de diciembre de 1986 y 17 de febrero de 1987. Comparten destinatario, Galvarino Henríquez S., y destino en Santiago, Chile. Los sobres sitúan el origen en Wilmington, California. Las fechas de escritura se distinguen de los matasellos. El lugar y fecha precisos del hallazgo siguen pendientes. Se conservan todas las páginas y ambas caras de cada sobre en el selector de documentos.
+*Agotar el archivo* nace de tres cartas recuperadas del persa en Chile, fechadas en **1985, 1986 y 1987**. Los sobres sitúan su recorrido desde Wilmington, California, hacia Santiago. Son envíos dirigidos a una misma persona que permiten acercarse a una correspondencia a través del tiempo. La plataforma reúne sus páginas y sobres para visitar el hallazgo, detenerse en sus marcas y ensayar otras maneras de leerlo.
 
-**La huella** transforma la distribución de tinta en una composición. **El eco de la lectura** transforma las variaciones de una lectura en voz alta en otra composición. Son dos traducciones diseñadas: la primera parte del papel; la segunda, del cuerpo que vuelve a leerlo. Ninguna reconstruye la voz del autor ni revela emociones ocultas.
+Me interesa aquello que la palabra escrita no alcanza a resolver: la distancia, las pausas, la materialidad y el contexto que imaginamos al leer. La propuesta consiste en una **traducción diseñada entre imagen, cuerpo y sonido**. Cada composición depende de una regla de lectura que se puede modificar.
 
-La relación continúa la pregunta de «Confiésate aquí»: una medición de lo visible o audible puede producir una representación sensible, pero siempre deja algo fuera. Aquí cada aproximación añade una capa al archivo. La escritura conserva una huella; la lectura produce otra; el sistema compone con ambas. Intentar agotarlo produce más archivo.
+La experiencia tiene dos recorridos:
 
-La invitación final, **«Arriésgate: arruina una hoja blanca»**, reivindica el tiempo, la corrección y las marcas del escribir frente a la facilidad de borrar. Escribe. Tacha. Vuelve sobre una palabra. Deja algo que no puedas borrar con una tecla.
+- **La huella:** la imagen de la carta se convierte en una partitura espacial. La presencia y distribución de tinta disparan sonidos al recorrer una grilla de filas y columnas.
+- **El eco de la lectura:** una persona lee en voz alta. Las variaciones de intensidad, altura vocal, pausas y movimiento facial se traducen después en una composición diferente de la voz original.
+
+La carta de 1987 menciona un cassette para escuchar sus voces. Este detalle vuelve especialmente significativa la relación entre escritura, distancia y sonido: la búsqueda de una presencia audible ya formaba parte de esa correspondencia. La plataforma no reconstruye ese cassette ni las voces históricas; añade una nueva mediación al encuentro con las cartas.
+
+El proyecto continúa una pregunta de mi trabajo anterior, *Confiésate aquí*: ¿qué sucede cuando una medición física se transforma en una representación sensible? Aquí el documento deja una huella, el cuerpo que lo lee produce otra y el sistema compone a partir de ambas. **Intentar agotar el archivo produce más archivo.**
+
+La invitación **«Arriésgate: arruina una hoja blanca»** toma posición frente a la comunicación inmediata y la facilidad de borrar. Recupera el tiempo de escribir, tachar y volver sobre una palabra. La plataforma también permite cargar una imagen propia y explorar sus marcas.
 
 ## 2. Banco de sonidos y disparador
 
-Diez WAV mono, 44.1 kHz, 16 bits, creados por síntesis para este proyecto con asistencia de IA. No se utilizaron grabaciones de una persona ni fragmentos de canciones. Las vocales son aproximaciones mediante armónicos y resonancias; no son voces humanas. El generador reproducible se incluye en `scripts/generate_sounds.py` y requiere Python, NumPy y SciPy solamente para regenerar los sonidos, no para usar la web.
+### Un lenguaje sin palabras
 
-| Archivo | Nombre / duración | Origen y autoría | Licencia |
-| --- | --- | --- | --- |
-| `audio/a.wav` | Apertura / 2,2 s | Síntesis original para Agotar el archivo, con asistencia de IA | CC0 1.0 |
-| `audio/e.wav` | Claridad / 2,1 s | Ídem | CC0 1.0 |
-| `audio/i.wav` | Hilo / 2,0 s | Ídem | CC0 1.0 |
-| `audio/o.wav` | Cavidad / 2,4 s | Ídem | CC0 1.0 |
-| `audio/u.wav` | Profundidad / 2,6 s | Ídem | CC0 1.0 |
-| `audio/m.wav` | Murmullo / 2,5 s | Ídem | CC0 1.0 |
-| `audio/s.wav` | Fricción / 0,65 s | Ídem | CC0 1.0 |
-| `audio/f.wav` | Aire / 1,2 s | Ídem | CC0 1.0 |
-| `audio/ta.wav` | Contacto / 0,32 s | Ídem | CC0 1.0 |
-| `audio/ka.wav` | Quiebre / 0,4 s | Ídem | CC0 1.0 |
+El banco reúne **10 sonidos originales de síntesis**, creados mediante código con asistencia de IA para este proyecto. Combina aproximaciones a vocales, un murmullo, aire, fricción y articulaciones breves. Las vocales se construyen con armónicos y resonancias; el aire y la fricción, con ruido filtrado. No son grabaciones de personas ni fragmentos de canciones.
 
-Licencia del banco: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Esta declaración se refiere a estos sonidos, no a las cartas históricas ni a las bibliotecas externas. Los nombres son evocaciones de diseño, no categorías emocionales científicas.
+La elección busca una materia cercana al habla que no pronuncie el contenido de la carta. La mezcla con una resonancia musical permite aproximar la escucha a una voz deformada o a una composición de notas. Los sonidos no representan emociones universales ni permiten deducir lo que sentía quien escribió.
 
-### La huella
+Los archivos son WAV mono, 44,1 kHz, 16 bits.
 
-La imagen se reduce a 350 píxeles de ancho y se separa tinta/fondo mediante luminosidad. La persona decide una grilla de 1 a 24 filas y 1 a 24 columnas. Se recorre por filas o columnas, hacia delante o en reversa, a un tempo entre 15 y 900 BPM. Cada pulso avanza una zona, incluyendo las silenciosas; el cursor permite seguir ese recorrido. Se puede editar sonido, nota y silencio de cada zona, cambiar escala, transponer dos octavas en ambas direcciones y aplicar desfase rítmico. Las decisiones por zona se conservan por página y tamaño de grilla durante la sesión. La imagen fija se convierte así en una partitura recorrida en el tiempo.
+| Archivo | Nombre | Duración | Autoría y origen | Licencia |
+| --- | --- | --- | --- | --- |
+| `audio/a.wav` | Apertura · A | 2,2 s | Síntesis procedimental original para el proyecto, generada con asistencia de IA | CC0 1.0 |
+| `audio/e.wav` | Claridad · E | 2,1 s | Mismo origen | CC0 1.0 |
+| `audio/i.wav` | Hilo · I | 2,0 s | Mismo origen | CC0 1.0 |
+| `audio/o.wav` | Cavidad · O | 2,4 s | Mismo origen | CC0 1.0 |
+| `audio/u.wav` | Profundidad · U | 2,6 s | Mismo origen | CC0 1.0 |
+| `audio/m.wav` | Murmullo · M | 2,5 s | Mismo origen | CC0 1.0 |
+| `audio/s.wav` | Fricción · S | 0,65 s | Mismo origen | CC0 1.0 |
+| `audio/f.wav` | Aire · F | 1,2 s | Mismo origen | CC0 1.0 |
+| `audio/ta.wav` | Contacto · TA | 0,32 s | Mismo origen | CC0 1.0 |
+| `audio/ka.wav` | Quiebre · KA | 0,4 s | Mismo origen | CC0 1.0 |
 
-| Dato de la imagen | Traducción |
+La licencia [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) corresponde al banco sonoro original. No se extiende a las cartas históricas ni a las bibliotecas y tipografías externas. Las digitalizaciones proceden de las cartas recuperadas para el proyecto; no se les atribuye una licencia de uso libre.
+
+### Disparador visual: la huella
+
+La imagen se analiza mediante luminosidad para separar marcas oscuras y fondo. Se divide en una grilla configurable y se recorre en el tiempo. **Cada pulso visita una casilla**; si tiene suficiente tinta y no está silenciada, dispara su sonido. Las casillas vacías conservan su tiempo como pausa.
+
+| Dato o decisión | Traducción sonora |
 | --- | --- |
-| Presencia de tinta en una zona | Disparo de una muestra |
-| Zonas vacías entre trazos | Pausas en el recorrido |
-| Fila de la grilla | Nota automática en la escala elegida; la nota de cada zona también se puede editar |
-| Densidad local de tinta | Intensidad y duración |
-| Proporción de bordes respecto a tinta | Selección de timbre vocal; zonas compactas → murmullo |
-| Densidad alta | Articulación adicional KA |
-| Complejidad alta de bordes | Fricción S en algunas zonas |
-| Posición horizontal | Panorama estéreo |
+| Presencia de tinta por encima del mínimo seleccionado | Activa el sonido de la casilla |
+| Densidad de tinta | Modifica la intensidad |
+| Densidad y complejidad local de los bordes | Proponen automáticamente un timbre del banco |
+| Fila de la grilla | Propone una nota en la escala elegida |
+| Posición horizontal | Modifica el panorama estéreo |
+| Sonido, nota y silencio elegidos por la persona | Sustituyen la propuesta automática de esa casilla |
+| Tempo, orden y desfase | Definen cuándo se visita cada zona |
 
-La escala predeterminada crea una familia sonora compartida; no pretende asignar emociones universales a las notas. La complejidad de bordes es una aproximación visual: esta versión no reconoce letras, redondez caligráfica, errores o presión del bolígrafo. Una mancha puede ser tinta, sombra o textura. La interfaz permite ver y ajustar la máscara.
+La lectura se puede organizar por filas o columnas y en ambos sentidos. El cursor naranja relaciona la zona visitada con la composición. No se utiliza reconocimiento de texto: el sistema no entiende palabras ni identifica con certeza un borrón, un error o la presión del bolígrafo. Una ilustración, un pliegue o una sombra pueden intervenir en el resultado si se interpretan como marca.
 
-### El eco de la lectura
+### Registro corporal y vocal: el eco
 
-Después de activar micrófono y cámara, se calibra el ambiente durante 1,5 segundos de silencio. Un medidor de entrada muestra si el micrófono entrega señal. Luego se lee hasta un máximo de dos minutos. Se almacenan características numéricas en memoria, no una grabación de voz ni un video. Al terminar queda disponible «3 · Escuchar el eco». La sensibilidad, la velocidad (0,25–4×), el timbre y la transposición pueden ajustarse sin volver a grabar. La última lectura se conserva al cambiar de carta o de página, hasta iniciar otra o recargar. El inicio vacío se recorta; las pausas internas permanecen.
+Al activar cámara y micrófono, se realizan **1,5 segundos de calibración en silencio**. Después se lee en voz alta y se cierra el registro con «Terminar». El sistema conserva características numéricas durante la sesión, no una grabación de la voz ni un video.
 
-| Registro | Traducción |
+| Característica registrada | Traducción sonora |
 | --- | --- |
-| Intensidad de voz sobre el ruido de fondo | Disparo y volumen |
-| Altura vocal periódica estimada (75–500 Hz) | Nota aproximada en la escala compartida |
-| Voz sin altura periódica fiable | Aire F |
-| Pausas | Ausencia de nuevos eventos, con decaimiento del sonido anterior |
-| Apertura de boca respecto al inicio | Vocal U/O/A y duración |
-| Variación de cejas/comisuras | Articulación TA adicional |
-| Inclinación de línea de ojos | Panorama estéreo |
+| Intensidad sobre el nivel de fondo | Activa eventos y modifica su volumen |
+| Altura vocal estimada, cuando hay periodicidad fiable | Selecciona una nota aproximada |
+| Señal sin altura vocal fiable | Produce aire |
+| Pausas internas | No añaden eventos; dejan decaer los anteriores |
+| Apertura de boca relativa al inicio | Cambia entre vocales y modifica la duración |
+| Variaciones de cejas y comisuras | Pueden añadir una articulación TA |
+| Inclinación de la línea de ojos | Modifica el panorama estéreo |
 
-MediaPipe Face Landmarker aporta posiciones y coeficientes de movimiento; no se usa para diagnosticar emociones. El espectrograma muestra energía por frecuencia en el tiempo; no transcribe palabras. Si la cámara o el modelo no están disponibles, el micrófono puede seguir funcionando. Hablar durante la calibración, ruido intenso, rostro fuera de cuadro y voces sin periodicidad estable afectan el resultado.
+El espectrograma muestra variaciones de energía por frecuencia a lo largo del tiempo. MediaPipe Face Landmarker aporta medidas del movimiento facial. **Estas medidas no se interpretan como diagnósticos de emociones.** Si el rostro o el modelo no están disponibles, el micrófono permite continuar la lectura sonora.
+
+La última lectura se conserva al cambiar de carta o de página. Se puede ajustar su sensibilidad, velocidad, timbre y registro sin volver a grabar. Se pierde al iniciar otro registro o recargar la página.
 
 ## 3. Parámetros y gráfica
 
-| Control | Sentido dentro del proyecto |
-| --- | --- |
-| Tempo (15–900 BPM) | Define cuánto tiempo dedicamos a cada zona, desde 4 s hasta unos 67 ms |
-| Filas y columnas (1–24 cada una) | Define la resolución de la lectura y qué marcas se agrupan |
-| Orden y reversa | Permite reorganizar la dirección de lectura del archivo |
-| Escala, transposición y nota por zona | Hace explícita la elección musical de quien traduce |
-| Timbre y silencio por zona | Permite componer con una marca o decidir no escucharla |
-| Desfase rítmico y repetición | Propone otras duraciones y retornos al documento |
-| Detección de tinta | Hace visible el límite entre marca y fondo |
-| Voz / resonancia musical | Aproxima la composición al lenguaje sin palabras o a notas sostenidas |
-| Persistencia | Modifica cuánto tarda cada marca en desaparecer sonoramente |
-| Volumen | Permite una escucha cómoda |
+### Decidir cómo escuchar
 
-La página utiliza papel marfil, grano fino, azul cobalto y acentos coral/amarillo. Instrument Serif da escala editorial a los títulos; DM Sans organiza la lectura y DM Mono identifica registros y mediciones. Las manchas difusas responden a la actividad sonora, junto a la precisión del cursor y el espectrograma. La imagen del documento permanece consultable y ampliable.
+La personalización permite discutir la traducción y componer con ella. Los controles hacen visible que una misma carta admite distintas duraciones y organizaciones sonoras.
 
-**Capturas de entrega pendientes:** portada y colección real; huella sobre una carta; eco de una lectura real. No se presentan capturas simuladas como resultados del archivo histórico.
+| Parámetro | Rango o posibilidades | Relación con el concepto |
+| --- | --- | --- |
+| Filas y columnas | 1–24 de cada una | Cambia la escala de observación: agrupa marcas o las fragmenta |
+| Tempo | 15–900 BPM | Desde 4 s hasta aproximadamente 67 ms por casilla; cambia el tiempo dedicado a la huella |
+| Orden | Filas, columnas y reversa | Permite recorrer el documento de otras maneras |
+| Sonido por zona | 10 timbres | Hace explícita la elección de qué materia sonora representa cada marca |
+| Nota por zona | Do 3–Do 5 | Permite intervenir la melodía propuesta |
+| Escala | Pentatónica, menor o cromática | Cambia las relaciones entre las alturas automáticas |
+| Transposición | Hasta dos octavas hacia arriba o abajo | Desplaza el registro de la composición |
+| Desfase rítmico | 0–80 % | Desplaza pulsos alternos y altera la regularidad del recorrido |
+| Silencio por zona | Activar o silenciar | Permite elegir qué marcas escuchar y cuáles dejar fuera |
+| Umbral y tinta mínima | Ajustables | Expone la decisión de qué cuenta como marca suficiente |
+| Repetición | Activada o desactivada | Permite regresar al documento y escuchar sus recurrencias |
+| Mezcla voz / resonancia musical | 0–100 % de timbre vocal | Acerca el sonido al lenguaje o a la nota sostenida |
+| Persistencia | 0,1–4× | Modifica cuánto dura la huella sonora, dentro de la duración disponible de cada muestra |
+| Volumen | 0–100 % | Adapta la intensidad de la escucha |
+| Sensibilidad del eco | 0,5–3× | Ajusta qué variaciones de la voz superan el filtro de entrada |
+| Velocidad del eco | 0,25–4× | Dilata o comprime temporalmente la lectura registrada |
+| Timbre y registro del eco | Automático o elegido; ±2 octavas | Permite reinterpretar el mismo registro sin grabarlo otra vez |
 
-### Probar en Mac
+### Decisiones gráficas
 
-1. Descomprime el proyecto. Abre Terminal en la carpeta que contiene `index.html`.
-2. Escribe `python3 -m http.server 8010` y presiona Enter.
-3. Abre `http://localhost:8010/`. Deja Terminal abierta mientras pruebas.
-4. Pulsa «Explorar el estudio de trazos» y «Escuchar la huella», o carga tu propia foto.
-5. Para el eco, usa auriculares, pulsa «Registrar mi lectura», permite cámara/micrófono, espera la calibración y lee. Pulsa «Terminar» y «Escuchar el eco».
-6. Descarga la composición WAV si quieres conservarla.
+El fondo marfil y el grano remiten a la superficie del papel. El azul cobalto construye una presencia difusa, con acentos coral y amarillo. Las manchas cambian durante la actividad sonora y conviven con la precisión de la grilla y las mediciones.
 
-Si el puerto está ocupado, detén el servidor anterior con Control+C o usa otro puerto y abre ese mismo número en el navegador. No abras `index.html` con doble clic: utiliza un servidor.
+**Instrument Serif** aporta una voz editorial a los títulos; **DM Sans** organiza la lectura de la interfaz y **DM Mono** identifica fechas, zonas y datos. La composición mantiene la carta visible junto a los controles para relacionar cada decisión con el documento. El azul no codifica una emoción detectada: es una decisión gráfica del proyecto.
 
-### Publicar en GitHub Pages
+La portada presenta el hallazgo, la colección permite elegir un envío y la mesa reúne las dos lecturas. Más abajo, la invitación a traer un archivo propio abre la experiencia a otras correspondencias.
 
-Sube el contenido del ZIP con **`index.html` directamente en la raíz del repositorio**, junto a CSS, JS, módulos y carpeta `audio`. En Settings → Pages selecciona la publicación desde la rama `main`, carpeta raíz. Abre la URL que GitHub muestre al completar el despliegue. Completa aquí los enlaces reales de repositorio y plataforma cuando existan. No se han publicado aún en GitHub en esta versión.
+![Portada de Agotar el archivo, con fondo marfil, título editorial y mancha azul.](capturas/01-portada.png)
 
-El sitio es estático, sin compilación ni backend. Requiere conexión para las fuentes y el modelo facial. Cámara y micrófono requieren HTTPS o localhost y permiso del navegador. Fotos y datos de lectura se procesan localmente; no se agregan al archivo público. El WAV exportado contiene la composición, no la voz original.
+*Portada: «Una carta sobrevive a su significado».*
 
-Archivos principales: `index.html`, `style.css`, `app.js` (interfaz/audio/captura), `analysis.mjs` (reglas), `audio/` (banco), `scripts/generate_sounds.py` (reproducción del banco), `tests.mjs` (verificación de reglas).
+![Carta de 1987 durante la reproducción de su huella, con grilla y controles de composición.](capturas/02-huella.png)
 
-Tecnologías: Canvas 2D, Web Audio API, MediaDevices y MediaPipe Tasks Vision 0.10.21. Implementación propia desde cero; «Oír la luz» es la herramienta de referencia del encargo, no código reutilizado en esta versión. Las mediciones de imagen usan Canvas y reglas propias; esta versión no usa OpenCV.
+*La huella: recorrido de una carta mediante una grilla personalizable. En esta captura se utiliza una configuración de 23 × 20 zonas.*
+
+![Interfaz del eco con espectrograma, registro terminado y controles para volver a escucharlo.](capturas/03-eco.png)
+
+*El eco: un registro listo para escuchar, con 35 eventos y 13 segundos de composición. La captura muestra una lectura conservada de la carta de 1985 mientras se consulta la de 1987.*
+
+### Cómo usar la plataforma
+
+1. Abre la [página pública](https://fernandaangel-cpu.github.io/agotar-el-archivo/). No requiere cuenta de ChatGPT.
+2. Elige una de las tres cartas y una página o cara del sobre.
+3. En **La huella**, define la grilla y el tempo. Pulsa «Escuchar mi partitura». Toca una casilla para cambiar su sonido, nota o silencio.
+4. En **El eco de la lectura**, pulsa «Grabar mi lectura» y permite cámara y micrófono. Espera la calibración, lee y pulsa «Terminar». Después selecciona «Escuchar el eco».
+5. Modifica los parámetros y descarga la composición WAV si quieres conservarla.
+6. Para otro documento, utiliza «Traer mi archivo». Las imágenes propias se procesan localmente y no se agregan a la colección pública.
+
+El sitio funciona con HTML, CSS y JavaScript, Canvas 2D, Web Audio API y MediaPipe Tasks Vision. Está publicado mediante GitHub Pages. Cámara y micrófono requieren HTTPS o localhost y los permisos correspondientes. Las fuentes y el modelo facial se cargan desde servicios externos; las imágenes propias y los datos de lectura se procesan en el navegador.
+
+Los registros tienen un máximo de dos minutos. La exportación WAV se limita a composiciones de hasta diez minutos para controlar el uso de memoria. Las configuraciones muy lentas y densas pueden superar ese límite, aunque se puedan reproducir.
+
+La propuesta se desarrolló con asistencia de IA en programación y síntesis sonora. [Oír la luz](https://github.com/fefeliperoar/oir-la-luz) es la referencia de la herramienta base del encargo; esta implementación utiliza código propio para sus recorridos y controles.
 
 ## 4. Reflexión
 
-Texto provisional que debe revisarse después de trabajar con las tres cartas:
+Traducir una carta en sonido obliga a decidir qué parte de ella se vuelve audible. Al cambiar la cantidad de zonas, el tempo o el orden, una misma superficie puede organizarse de maneras diferentes. La composición no se encuentra intacta dentro del papel: aparece en el encuentro entre sus marcas y una regla diseñada.
 
-Al intentar extraer otra lectura del documento aparecen decisiones que no pertenecen a la carta: dónde empieza una marca, cuánto dura una pausa, qué sonido corresponde a una zona de tinta. La traducción hace audibles ciertas relaciones, pero también revela el criterio de quien construye el sistema. La melodía no estaba esperando intacta dentro del papel: surge del encuentro entre una huella y una regla.
+La escritura deja de ser solamente un vehículo para el significado. Los espacios, la concentración de tinta y los elementos gráficos pueden ocupar un lugar en la escucha. A la vez, el sistema no distingue automáticamente qué marca fue una decisión del remitente y cuál apareció por el paso del tiempo o la digitalización. Esa limitación importa: una sombra puede convertirse en un sonido con la misma legitimidad técnica que una letra.
 
-En la lectura en voz alta, el archivo se encuentra con un cuerpo presente. Sus pausas, su registro vocal y sus movimientos añaden información que no puede atribuirse a quien escribió. El eco registra ese encuentro, sin resolver el contexto perdido. Quedan fuera el significado de las frases, la experiencia del remitente y del destinatario, las razones de cada tachadura y las circunstancias de conservación.
+En el eco, quien lee añade una duración, una voz y nuevos movimientos. El funcionamiento del registro y su reproducción se comprobó durante las pruebas de uso. La posibilidad de conservar una lectura al cambiar de página permite reconocer que ese eco pertenece a un encuentro concreto con el archivo, aunque después acompañe otro documento. No constituye evidencia de cómo se sentía quien escribió.
 
-Mejoras concretas:
+La referencia al cassette en la carta de 1987 hace visible que el deseo de escuchar a alguien ya atravesaba esta correspondencia. Hoy puedo producir una composición a partir de sus huellas, pero sigo sin acceder a aquellas voces. La plataforma acerca ciertos aspectos del documento y mantiene otros fuera de alcance: el sentido íntimo de cada frase, las intenciones, el contexto perdido y la historia completa de sus recorridos.
 
-1. Contrastar las tres cartas reales, corregir inclinación/iluminación y permitir delimitar manualmente renglones para evitar que sombras y pliegues se conviertan en tinta.
-2. Comparar varias lecturas del mismo documento con calibración individual, mostrando qué variaciones permanecen y cuáles dependen de quien lee.
-3. Añadir un editor visible del mapping, para poder discutir y alterar las decisiones de traducción.
+**Agotar el archivo no significa resolverlo. Significa volver a él y reconocer que cada lectura deja algo nuevo.**
 
-### Antes de entregar
+### Mejoras concretas
 
-- Precisar lugar y fecha del hallazgo y revisar las fichas documentales.
-- Probar cámara/micrófono reales y escuchar críticamente los resultados de cada carta.
-- Completar reflexión con observaciones efectivas y las referencias de clase que correspondan.
-- Añadir 2–3 capturas y grabar un video de uso de 30–60 segundos.
-- Publicar y verificar GitHub Pages desde otro dispositivo.
-- Entregar enlaces al repositorio y a la plataforma, README y video según el encargo.
-
-### Colección incorporada
-
-Los PDF proporcionados son M. Carolina M. (1985, cinco páginas digitalizadas), 1122 C Walk 369 (1986, cuatro páginas) y M. Elena M. (1987, cinco páginas). Incluyen sobres y cartas, no cinco/cuatro cartas separadas. Imágenes derivadas de estos escaneos en `letters/`; las fotografías del archivo no están cubiertas por la licencia CC0 del banco de sonidos. No se han inventado transcripciones.
-
-La carta de 1987 menciona un cassette para escuchar sus voces. Ese dato permite pensar la sonificación como una nueva mediación de una correspondencia que ya buscaba cruzar escritura y voz. El cassette no fue proporcionado: la plataforma no lo reconstruye ni reproduce aquellas voces.
-
-### Actualización de controles y eco
-
-La última lectura ya no se descarta al navegar entre páginas. La detección de voz usa una estimación del ruido menos dependiente de palabras dichas durante la calibración, con sensibilidad ajustable y diagnóstico explícito si no hay señal. Se conecta el analizador de micrófono a una salida silenciada para mantener activo el grafo de audio, sin retorno de la voz a los altavoces. Se añadieron pruebas del flujo grabar–terminar–escuchar con APIs de micrófono simuladas; sigue siendo necesaria la prueba de cámara y micrófono físicos en el equipo de entrega. Los WAV de más de 10 minutos no se exportan en esta versión para evitar un consumo excesivo de memoria; la reproducción de la grilla conserva su rango completo.
+1. **Separar mejor las marcas del soporte.** Incorporar corrección de iluminación e inclinación, y una herramienta para delimitar o excluir manualmente ilustraciones, pliegues y sombras. Esto permitiría comparar una lectura de la escritura con otra de toda la superficie.
+2. **Comparar varias lecturas del mismo documento.** Guardar versiones con sus parámetros y colocar sus composiciones y registros lado a lado para reconocer qué cambia entre lectores, velocidades y decisiones de traducción.
+3. **Profundizar la ficha de cada carta.** Documentar las circunstancias del hallazgo y permitir anotaciones que distingan lo legible, lo supuesto y lo desconocido, sin llenar esos vacíos con datos inventados.
