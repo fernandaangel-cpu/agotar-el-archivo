@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import {detectRows,inkEvents,pitchOf,echoEvents} from './analysis.mjs';
+const w=100,h=80,mask=new Uint8Array(w*h);
+assert.deepEqual(detectRows(mask,w,h),[]);
+assert.equal(inkEvents(mask,w,h,[],5).events.length,0);
+for(let y of [15,16,17,18,19,45,46,47,48,49])for(let x=10;x<90;x++)mask[y*w+x]=1;
+const rows=detectRows(mask,w,h);assert.equal(rows.length,2);
+const score=inkEvents(mask,w,h,rows,4);assert.ok(score.events.length>0);assert.ok(score.events.every(e=>Number.isFinite(e.note)&&e.amp<=.46));
+assert.equal(pitchOf(new Float32Array(2048),48000),null);
+for(let hz of [110,150,220,330,440]){const wave=Float32Array.from({length:2048},(_,i)=>.1*Math.sin(2*Math.PI*hz*i/48000));assert.ok(Math.abs(pitchOf(wave,48000)-hz)<3,`pitch ${hz}`)}
+assert.deepEqual(echoEvents([{time:2,rms:0,pitch:null}],.001),[]);
+const echo=echoEvents([{time:2,rms:.03,pitch:150,face:false},{time:3,rms:.12,pitch:330,face:true,mouth:.6,gesture:.5}],.001);
+assert.equal(echo.length,3);assert.ok(echo[1].note>echo[0].note);assert.ok(echo[1].amp>echo[0].amp);
+console.log('OK: silence, rows, image events, pitch range and voice/facial mapping.');
+const {gridCells,gridScore,echoScore}=await import('./analysis.mjs');
+const blank=gridCells(new Uint8Array(100),10,10,2,2);assert.equal(gridScore(blank,2,2,2).events.length,0);
+const solid=gridCells(new Uint8Array(100).fill(1),10,10,2,2);
+const horizontal=gridScore(solid,2,2,2,'rows'),vertical=gridScore(solid,2,2,2,'columns');
+assert.equal(horizontal.events[1].col,1);assert.equal(vertical.events[1].row,1);
+assert.equal(gridScore(solid,2,2,4).duration,horizontal.duration*2);
+solid[0].muted=true;solid[1].id='a';solid[1].note=7;const custom=gridScore(solid,2,2,2);assert.equal(custom.events.length,3);assert.equal(custom.events[0].id,'a');assert.equal(custom.events[0].note,7);
+const quietFrames=Array.from({length:60},(_,i)=>({time:i/10,rms:i<15?.0004:.004,pitch:220,face:false}));
+const quiet=echoScore(quietFrames,1.5);assert.ok(quiet.events.length>0,'quiet voice survives');assert.ok(quiet.events[0].time<.1,'no long initial silence');
+assert.equal(echoScore(quietFrames.map(f=>({...f,rms:0}))).events.length,0,'silence stays silent');
+console.log('OK: grid order, duration, manual mapping, mute, quiet voice and trimmed start.');
